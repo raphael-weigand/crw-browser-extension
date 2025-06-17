@@ -21,6 +21,10 @@ async function checkConsumerRights(url, tabId) {
 		if (!companyName) return;
 
 		// Search for articles with the company name
+		// action?query: exact title matchin?
+		// action=opensearch ... fuzzy search
+		// srlimit ... result limit
+		// offset ... position in the result set
 		const searchUrl = `https://consumerrights.wiki/api.php?action=query&list=search&srsearch=${encodeURIComponent(companyName)}&srlimit=20&format=json&origin=*`;
 
 		const searchResponse = await fetch(searchUrl);

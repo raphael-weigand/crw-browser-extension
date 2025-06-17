@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="tbd.css">
+    <title>Test search performance of large json</title>
+</head>
+<body>
+	<h1>Check performance for searching the domain name in the downloaded wiki</h1> 
+	<h2>This is generated dummy-data</h2>
+	<input id="domain-name" placeholder="Enter Domain name (like volkswagen.de"/>
+	<button onclick="performSearch()"> Search</button>
+	
+	<!-- Load the JSON articles stored in a variable artiles, we don't use a frontend server, we open the file directly in browser -->
+	<script src="articles.js"></script> 
+	<script>
+		function getCompanyNameFromDomain() {
+			const domainName = document.getElementById('domain-name').value;
+			return domainName.split('.')[0];
+		}
+
+		async function getJsonFile() {
+			return new Promise((resolve, reject) => {
+				if (articles) {
+					resolve(articles); // from articles.js
+				} else {
+					console.error("No articles found!");
+					reject(null);
+				}
+			});
+		}
+
+		async function performSearch() {
+			const companyName = getCompanyNameFromDomain();
+			const consumerRightsArticles = await getJsonFile();
+			console.log(articles);
+			console.log("Search by title");
+			const titleSearchStart = Date.now();
+			const resultTitles = searchByTitle(companyName, consumerRightsArticles);
+			const titleSearchEnd = Date.now();
+			console.log(`It took ${titleSearchEnd - titleSearchStart}s to find ${resultTitles.length} article(s). Articles found: ${resultTitles.map(i=>i.article_title)}`);
+		}
+
+		// a collection of functions
+		function searchByTitle(searchTerm, data) {
+			if (!searchTerm) return [];
+			const term = searchTerm.toLowerCase();	
+			return data.filter(item => item.article_title.toLowerCase().includes(term));
+		}
+
+	</script>
+</body>
+</html>
