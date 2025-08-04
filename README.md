@@ -27,4 +27,6 @@ Then follow this guide on how to enable local [chrome extensions](https://develo
 
 The idea was given by Louis Rossmann in [InfiniteQuant revokes lifetime access after buying VPNSecure: don't trust VPNSecure, 15:55](https://youtu.be/VWSq9i8D2hE?si=0cnhJm6nAV8_m3y1)
 
-## Availability
+# Issues
+
+-) It is pretty tricky to get the company name from a domain, this can lead to false-positives at the moment.
