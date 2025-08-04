@@ -16,7 +16,9 @@ It only shows the articles when clicking the extension, it does not open itself.
 
 ## Setup Chrome Extension from this Repo
 
-The extension is not yet published to Chrome Webstore, but you can locally install it. I plan to publish it to the Chrome Webstore shortly.
+~~The extension is not yet published to Chrome Webstore~~, but you can locally install it. I plan to publish it to the Chrome Webstore shortly.
+
+The extension is available on both [Chrome Webstore](https://chromewebstore.google.com/detail/consumer-rights-checker/jolonmfmmlkfkcdjcbjplgajcjbmgabp) and [Firefox Add-Ons](https://addons.mozilla.org/en-US/firefox/addon/consumer-rights-checker/?utm_source=addons.mozilla.org&utm_medium=referral&utm_content=search).
 
 Download the repo in a folder. 
 Then follow this guide on how to enable local [chrome extensions](https://developer.chrome.com/docs/extensions/get-started)
@@ -25,3 +27,4 @@ Then follow this guide on how to enable local [chrome extensions](https://develo
 
 The idea was given by Louis Rossmann in [InfiniteQuant revokes lifetime access after buying VPNSecure: don't trust VPNSecure, 15:55](https://youtu.be/VWSq9i8D2hE?si=0cnhJm6nAV8_m3y1)
 
+## Availability
